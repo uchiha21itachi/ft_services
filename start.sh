@@ -1,7 +1,7 @@
 
 
 echo "Hello installation in process.......";
-sleep 3;
+sleep 10;
 
 #Updating everything before install
 
@@ -10,7 +10,7 @@ sudo apt-get upgrade -y
 
 #I should probably remove already existing versions 
 echo "Installing curl, certificates, software-property common";
-sleep 2;
+sleep 10;
 
 sudo apt-get install curl -y
 sudo apt-get install apt-transport-https -y
@@ -54,7 +54,7 @@ sudo apt-get install software-properties-common -y
 #docker
 
 echo "Installing Virtualbox.....My personal messege \n\n\n\n";
-sleep 5;
+sleep 10;
 #Install Virtualbox Hypervisor and FileZilla
 sudo apt install virtualbox virtualbox-ext-pack -y
 sudo apt-get install filezilla -y
@@ -62,7 +62,7 @@ sudo apt-get install filezilla -y
 
 
 echo "Startting the Minikube installation now ....\n\n\n\n"
-sleep 5;
+sleep 10;
 
 #Installing Minikube and copying it to correct dir
 wget https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
@@ -72,9 +72,9 @@ sudo chmod 755 /usr/local/bin/minikube
 
 echo "Installation done..... Exiting the interface";
 echo "Checking Minikube version now ..."
-sleep 5;
+sleep 10;
 minikube version
-sleep 5;
+sleep 10;
 
 echo "Starting the minikube now"
-minikube start --vm-driver=virtualbox
+# minikube start --vm-driver=virtualbox

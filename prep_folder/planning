@@ -1,0 +1,117 @@
+/*
+
+
+//installing minikube debian
+
+- curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
+
+- sudo dpkg -i minikube_latest_amd64.deb
+
+
+//uninstall minkube 
+
+- minikube stop; minikube delete
+- docker stop (docker ps -aq)
+- rm -r ~/.kube ~/.minikube
+- sudo rm /usr/local/bin/localkube /usr/local/bin/minikube
+- systemctl stop '*kubelet*.mount'
+- sudo rm -rf /etc/kubernetes/
+- docker system prune -af --volumes
+
+
+//Starting the minikube
+
+1. Start minikube normally 
+    -minikube start
+    //It installs all the dependency like virtualbox, kubctl
+2.  Stop minikube and start with virtualbox
+    - minikube start --vm-driver=virtualbox
+
+3.  Install Kubectl 
+    // https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
+
+    - minikube kubectl -- get pods -A
+    //doesn't work
+    ---------------------
+    - curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+    //To download a specific version, replace the $(curl -L -s https://dl.k8s.io/release/stable.txt)
+
+    - curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
+
+    - echo "$(<kubectl.sha256) kubectl" | sha256sum --check
+    //should return ok for checksum
+
+    - sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+    //Installing kubectl
+
+    //If root privlidges are not availaible
+    - mkdir -p ~/.local/bin/kubectl
+    - mv ./kubectl ~/.local/bin/kubectl
+    # and then add ~/.local/bin/kubectl to $PATH
+
+*/
+
+
+/*
+
+    //Layers of Abstraction
+        - Deployment manages a ...
+            - Replicaset manages a ...
+                - Pod is an Abstraction of ...
+                    - Container (dockerfile) 
+
+    //Should use namespaces when big project
+
+
+    **- Check nodes
+        kubectl get nodes
+        kubectl get all
+        kubectl get pods
+        kubectl get services
+        kubectl get deployment
+        kubectl get replicaset
+        kubectl get pods -o wide
+    **- Debugging a pod
+        kubectl logs [pod name]
+        kubectl describe pod [pod name]
+        kubectl exec -it [pod name] -- bin/bash
+
+
+    *- Create a deployment (we dont create pods we ceate deployment(smaller unit))
+        kubectl create deployment nginx-depl --image=nginx
+
+        //it will pull nginx image from docker hub
+
+    *- Editing a deployment
+        Kubectl edit deployment [name]
+
+        //Opens config file which can be edited
+
+    *- Deleting a deployment
+        kubctl delete deployment [deployment name]
+
+
+    *- Deploying a pod from congif file (nginx-deployment.yaml)
+        kubectl apply -f nginx-deployment.yaml
+        kubectl apply -f nginx-service.yaml
+
+        kubectl delete -f nginx-deployment.yaml
+        //to delete
+        
+        //To change config after deployment-
+            //make changes in Yaml file and run apply command again
+
+    *- After creating a deployment and a service
+        -To see the status of deployment 
+            kubectl get deployment nginx-deployment -o yaml
+        
+        //Gives the output in Yaml. Config with all three parts - Metadata, spec and status
+
+    *- Deleting a deployment and service from yaml file 
+        kubectl delete -f nginx-deployment.yaml
+        kubectl delete -f nginx-service.yaml
+  
+
+
+
+*/
