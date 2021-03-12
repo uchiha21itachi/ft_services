@@ -1,0 +1,5 @@
+//To Start the project apply config files in this order
+
+1. kubectl apply -f mongo-secret.yaml
+2. kubectl apply -f mongo.yaml
+3. kubectl apply -f mongo-config.yaml
