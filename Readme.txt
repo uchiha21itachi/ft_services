@@ -1,17 +1,3 @@
-What are Docker and Kubernetes whale
-Docker is a software that allow users to run lightweight virtual machines. You can build Docker "containers" with a Dockerfile. A container is a single lightweight virtual machine running an os, with its own memory space and storage. It is created on an image, which is a template with preconfigured software. A container differs from a virtual machine because it uses the same kernel as the host computer, whereas a virtual machine has its own kernel. Containers are faster and lighter.
-
-If you're running big apps that needs lot of containers/services, such as a database, web servers, monitoring tools, ftp, ssh..., you'll need a way to properly manage multiple Docker containers. It's not an easy task; you need to restart automatically crashed containers, to share data between them, to make sure some are fetchable from outside and some not... That's what Kubernetes does.
-
-In Kubernetes, you have:
-
-Deployment: an object that runs and manages N instances of a given Docker image. For example, you can have a deployment that will launch and manage 10 Apache servers.
-Service: an object that links a deployment externally or to other containers. For exemple, a deployment that will link the IP 192.168.0.1 to the 10 Apache servers and pick the one that has the least work load.
-Pod: A pod is a running instance of a deployment, you can run a shell into it. It has its own IP and its own memory space.
-All the above objects are described in YAML files.
-
-Minikube is the software that we use to create a virtual machine that runs Kubernetes, and insures compatibility with VirtualBox. It features many tools, such as a dashboard to see how are you'r pods going.
-
 Docker basics command white_check_mark
 # Build a docker image from a Dockerfile
 docker build -t <your image name> <your Dockerfile dir>
@@ -127,3 +113,38 @@ To build Grafana + InfluxDB + Telegraf stack: https://medium.com/@nnilesh7756/co
 Kubernetes cheat sheet: https://kubernetes.io/fr/docs/reference/kubectl/cheatsheet/
 Questions ? Suggestions ? mailbox_closed
 Tom Marx tmarx on the intra and slack :)
+
+
+
+
+
+
+
+
+
+
+//
+
+Project helpers
+
+#Apk commands for Dockerfile
+https://www.cyberciti.biz/faq/10-alpine-linux-apk-command-examples/?__cf_chl_captcha_tk__=d4f70a4477f62ed0695fb553bc84bcf1d179ac87-1615737840-0-Ae7W6sqYnceXHXCBsZuZw_5oEh12XvkhJ4R-4CW230dCxHFem22oDgzjKEzTy5wCTReh8dhHj60W1wGJT6-sQrGc--XeS1aahul156WkAigR-dHMjhWczYbW9yhmvviiO5ZceI1t4ZgGJE5pu7j4J2sQdbptyHTD4IEBsbCg_SZHmvx5LQX7e1DYd9JjuyRB6wpsEAwUIOTb7xZhjwTI0KOw4n27bVHMn6noOzTBnQlpVrs3HZHjdiAcik6G7k-RbUeAJ-4rm2ZBMGpmqFaki1W3Nra_w2tf2YzJQrtW6N8Pu6ac5_d5KhNPcaqZHXnWbd9gTYRVVUxnt_FqCkiCg6lGLoJUYuyP1mYysaBUOlcYYAsVjC3mWa5vVAD-FwsfZtfieRVTzUgI34kPElqQ4ONV0YP-yR_PDMBNoZ8WAwLDGR-hlUIGy1Vt1i04i0QhR7IDZaLbuIvjHJKymcXUxvzjRqK_6DUPtE4PDZvrXcek8yul7xYCgGNauZpcKNAU-yrEkDDX1PuZqX7uqn1KbuDPppukOTO77ihbV39nyqeI_dhsDz1QYdbWNkF3LXXg6rFAkcO19nWd-9c8OKG3kpu1xmoqRhRXrvSXShvDJ0S-sZcLGr_CeCLyvQbIOvGmLDguewxdwCpI8hwxVJxMzqM
+
+#Nginx helpers
+https://hub.docker.com/_/nginx
+https://www.linode.com/docs/guides/how-to-configure-nginx/
+
+#Wordpress 
+https://kubernetes.io/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/
+
+
+https://kubernetes.io/docs/tutorials/stateless-application/expose-external-ip-address/
+
+#InfluxDB
+https://octoperf.com/blog/2019/09/19/kraken-kubernetes-influxdb-grafana-telegraf/#tl-dr
+
+#Project for reference
+https://github.com/cclaude42/ft_services
+
+#Tips for defence in 42 VM linux
+https://www.notion.so/Ft_services-VM-852d4f9b0d9a42c1a2de921e4a2ac417
