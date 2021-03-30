@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Dockerfile                                         :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: yassharm <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/03/30 14:54:13 by yassharm          #+#    #+#              #
+#    Updated: 2021/03/30 14:55:27 by yassharm         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 FROM alpine:latest
 
 # Getting wget
@@ -7,3 +19,7 @@ RUN apk add bash
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
 
 RUN apk add mysql mysql-client --no-cache
+COPY ./sql_srcs/setup.sh .
+COPY ./sql_srcs/wordpress.sql .
+RUN chmod +x setup.sh
+RUN ./setup.sh
