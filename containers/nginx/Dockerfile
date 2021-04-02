@@ -21,8 +21,10 @@ RUN ssh-keygen -f /etc/ssh/ssh_host_ed25519_key -N '' -t ed25519
 RUN	mkdir /run/nginx
 RUN	mkdir /var/run/sshd
 RUN	mkdir /www
-RUN	adduser -D -g 'www' www && chown -R www:www /var/lib/nginx && chown -R www:www /www 
+#RUN	adduser -D -g 'www' www && chown -R www:www /var/lib/nginx && chown -R www:www /www 
 RUN chmod 775 /www
+
+#RUN sleep 10
 
 COPY ./nginx_srcs/wordpress.conf /etc/nginx/sites-available/
 COPY ./nginx_srcs/nginx.conf /etc/nginx/
@@ -38,7 +40,9 @@ WORKDIR /
 RUN ln -s /etc/nginx/sites-available/wordpress.conf /etc/nginx/sites-enabled/
 COPY ./nginx_srcs/start.sh .
 RUN chmod +x start.sh
-RUN ./start.sh
 
 EXPOSE 80/tcp
 EXPOSE 443/tcp
+
+
+CMD "start.sh"

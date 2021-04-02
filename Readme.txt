@@ -134,6 +134,9 @@ https://www.cyberciti.biz/faq/10-alpine-linux-apk-command-examples/?__cf_chl_cap
 https://hub.docker.com/_/nginx
 https://www.linode.com/docs/guides/how-to-configure-nginx/
 
+//ssh guide
+https://guide.ubuntu-fr.org/server/openssh-server.html
+
 #Wordpress 
 https://kubernetes.io/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/
 

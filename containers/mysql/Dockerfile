@@ -22,4 +22,6 @@ RUN apk add mysql mysql-client --no-cache
 COPY ./sql_srcs/setup.sh .
 COPY ./sql_srcs/wordpress.sql .
 RUN chmod +x setup.sh
-RUN ./setup.sh
+EXPOSE 3306
+CMD ["/setup.sh"]
+

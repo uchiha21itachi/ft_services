@@ -25,5 +25,6 @@ RUN rm config.sample.inc.php
 COPY ./php_srcs/config.inc.php /var/www/phpMyAdmin
 COPY ./php_srcs/setup.sh .
 RUN chmod +x setup.sh
-RUN ./setup.sh
 EXPOSE 5000
+
+CMD "setup.sh"

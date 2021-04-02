@@ -26,5 +26,6 @@ RUN echo "copying wp-config.php"
 COPY ./wordpress_srcs/wp-config.php /var/www/wordpress
 COPY ./wordpress_srcs/setup.sh .
 RUN chmod +x setup.sh
-RUN ./setup.sh
 EXPOSE 5050
+
+CMD "setup.sh"
