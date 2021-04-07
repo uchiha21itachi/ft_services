@@ -29,6 +29,7 @@ spec:
     app: wordpress
   ports:
     - port: 5050
+      targetPort: 5050
       protocol: TCP
       name: wordpress
   type: LoadBalancer

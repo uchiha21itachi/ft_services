@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
   name: nginx
 spec:
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       app: nginx
@@ -14,17 +16,23 @@ spec:
     spec:
       containers:
       - name: nginx
+        image: nginx
+        imagePullPolicy: IfNotPresent
         env:
         - name: SSH_USER
-          value:
+          valueFrom:
+            secretKeyRef:
+              name: ssh-secret
+              key: username
         - name: SSH_PASSWORD
-          value:
-        imagePullPolicy: IfNotPresent
-        image: nginx
+          valueFrom:
+            secretKeyRef:
+              name: ssh-secret
+              key: password
         ports:
         - containerPort: 80
           name: http
-        - containerPort: 2222
+        - containerPort: 22
           name: ssh
         - containerPort: 443
           name: https
@@ -32,20 +40,32 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-service
+  name: nginx
+  #annotations:
+   # metallb.universe.tf/allow-shared-ip: address-pool
 spec:
   selector:
     app: nginx
   ports:
-    - port: 2222
+    - name: ssh
+      port: 22
+      targetPort: 22
       protocol: TCP
-      name: ssh
-      nodePort: 2222
     - name: https
-      protocol: TCP
       port: 443
-    - port: 80
+      targetPort: 443
       protocol: TCP
-      name: http
+    - name: http
+      port: 80
       targetPort: 80
+      protocol: TCP
   type: LoadBalancer
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: ssh-secret
+stringData:
+  username: admin
+  password: admin
