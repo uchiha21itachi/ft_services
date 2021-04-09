@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: wordpress
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Never
         image: wordpress
         ports:
         - containerPort: 5050

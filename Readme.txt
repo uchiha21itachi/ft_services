@@ -131,6 +131,9 @@ Project helpers
 https://www.cyberciti.biz/faq/10-alpine-linux-apk-command-examples/?__cf_chl_captcha_tk__=d4f70a4477f62ed0695fb553bc84bcf1d179ac87-1615737840-0-Ae7W6sqYnceXHXCBsZuZw_5oEh12XvkhJ4R-4CW230dCxHFem22oDgzjKEzTy5wCTReh8dhHj60W1wGJT6-sQrGc--XeS1aahul156WkAigR-dHMjhWczYbW9yhmvviiO5ZceI1t4ZgGJE5pu7j4J2sQdbptyHTD4IEBsbCg_SZHmvx5LQX7e1DYd9JjuyRB6wpsEAwUIOTb7xZhjwTI0KOw4n27bVHMn6noOzTBnQlpVrs3HZHjdiAcik6G7k-RbUeAJ-4rm2ZBMGpmqFaki1W3Nra_w2tf2YzJQrtW6N8Pu6ac5_d5KhNPcaqZHXnWbd9gTYRVVUxnt_FqCkiCg6lGLoJUYuyP1mYysaBUOlcYYAsVjC3mWa5vVAD-FwsfZtfieRVTzUgI34kPElqQ4ONV0YP-yR_PDMBNoZ8WAwLDGR-hlUIGy1Vt1i04i0QhR7IDZaLbuIvjHJKymcXUxvzjRqK_6DUPtE4PDZvrXcek8yul7xYCgGNauZpcKNAU-yrEkDDX1PuZqX7uqn1KbuDPppukOTO77ihbV39nyqeI_dhsDz1QYdbWNkF3LXXg6rFAkcO19nWd-9c8OKG3kpu1xmoqRhRXrvSXShvDJ0S-sZcLGr_CeCLyvQbIOvGmLDguewxdwCpI8hwxVJxMzqM
 
 #Nginx helpers
+http://nginx.org/en/docs/beginners_guide.html
+
+
 https://hub.docker.com/_/nginx
 https://www.linode.com/docs/guides/how-to-configure-nginx/
 
@@ -151,3 +154,7 @@ https://github.com/cclaude42/ft_services
 
 #Tips for defence in 42 VM linux
 https://www.notion.so/Ft_services-VM-852d4f9b0d9a42c1a2de921e4a2ac417
+vboxmanage modifyvm english-version-testing  --nested-hw-virt on
+
+
+

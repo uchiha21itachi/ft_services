@@ -1,0 +1,56 @@
+--------------------------DOCKER HELPERS__________________________________
+
+
+#Giving permission to docker to avoid sudo everytime
+    -   sudo groupadd docker
+    -   sudo usermod -aG docker $USER
+
+
+
+
+
+
+---------------------------NGINX HELPERS--------------------------
+
+//Basic Commands for Alpine Linux
+
+*Installation
+    -   apk add nginx
+    
+#Creating new user and group 'www' for nginx
+    -   adduser -D -g 'www' www
+
+#Create a directory for html files
+    -   mkdir /www
+    -   chown -R www:www /var/lib/nginx
+    -   chown -R www:www /www
+
+# Dir for config file (Replace with your custom .conf)
+    -   /etc/nginx/nginx.conf
+
+#Starting nginx
+    -   rc-service nginx start
+
+#Testing configuration
+    -   nginx -t
+
+#Reload, Restart, Stop
+    -   rc-service nginx reload
+    -   rc-service nginx restart
+    -   rc-service nginx Stop
+
+#For checking if nginx has started
+    -   ps aux | grep nginx
+
+#Other useful Command (Ubuntu - To kill already running nginx server occupying port (80, 443))
+    -   sudo netstat -tulpn | grep LISTEN
+    -   sudo kill "pid"
+
+#To check error.log
+    -   less /var/log/nginx/error.log
+
+
+
+//Helpful Links
+
+https://wiki.alpinelinux.org/wiki/Nginx
