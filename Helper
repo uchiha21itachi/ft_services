@@ -1,13 +1,20 @@
---------------------------DOCKER HELPERS__________________________________
-
+--------------------------DOCKER HELPERS----------------------------------------
 
 #Giving permission to docker to avoid sudo everytime
     -   sudo groupadd docker
     -   sudo usermod -aG docker $USER
 
+#By default shell does not point to the minikube docker repo. To point you shell to minikube docker env. Please refer to this
+    -   https://medium.com/swlh/how-to-run-locally-built-docker-images-in-kubernetes-b28fbc32cc1d
+    -   minikube docker-env
+    -   eval $(minikube -p minikube docker-env)
 
+-------------------------KUBECTL HELPERS---------------------------------------
 
-
+#To see the pods om more detail
+    -   kubectl get pods --show-labels
+    -   kubectl get pods -o wide
+    -   kubectl describe pods ${pod_name}
 
 
 ---------------------------NGINX HELPERS--------------------------
