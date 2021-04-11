@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx
+        image: ft-nginx
         imagePullPolicy: Never
         env:
         - name: SSH_USER
@@ -70,44 +70,44 @@ stringData:
   username: admin
   password: admin
 
----
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: nginx-config
-  namespace: default
-data:
-  default.conf: |
-    server {
-      listen 80       default_server;
-      listen [::]:80  default_server;
-      return 301      https://$host$request_uri;
-    }
-    upstream backend {
-      server phpmyadmin:5000;
-    }
-    server {
-      listen  443         ssl;
-      listen  [::]:443    ssl;
-      server_name           _;
-      index                 index.php;
-      root                  /var/www/wordprss;
-      ssl_certificate       /root/ssl/server.crt;
-      ssl_certificate_key   /root/ssl/server.key;
-      location / {
-        try_files $uri $uri/ =404;
-      }
-      location /wordpress/ {
-        return 307  http://$host:5050/;
-      }
-      location /phpmyadmin/ {
-        proxy_pass			http://phpmyadmin:5000/;
-        proxy_redirect      off;
-        proxy_set_header	Host $host;
-        proxy_set_header	X-Real-IP $remote_addr;
-        proxy_set_header	X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header	X-Forwarded-Host $server_name;
-        proxy_set_header	X-Forwarded-Proto https;
-      }
-    }
+# ---
+# apiVersion: v1
+# kind: ConfigMap
+# metadata:
+#   name: nginx-config
+#   namespace: default
+# data:
+#   default.conf: |
+#     server {
+#       listen 80       default_server;
+#       listen [::]:80  default_server;
+#       return 301      https://$host$request_uri;
+#     }
+#     upstream backend {
+#       server phpmyadmin:5000;
+#     }
+#     server {
+#       listen  443         ssl;
+#       listen  [::]:443    ssl;
+#       server_name         _;
+#       index                 index.html;
+#       root                  /www/;
+#       ssl_certificate       /ssl_certificate/server.crt;
+#       ssl_certificate_key   /ssl_certificate/server.key;
+#       location / {
+#         try_files $uri $uri/ =404;
+#       }
+#       location /wordpress/ {
+#         return 307  http://$host:5050/;
+#       }
+#       location /phpmyadmin/ {
+#         proxy_pass			http://phpmyadmin:5000/;
+#         proxy_redirect      off;
+#         proxy_set_header	Host $host;
+#         proxy_set_header	X-Real-IP $remote_addr;
+#         proxy_set_header	X-Forwarded-For $proxy_add_x_forwarded_for;
+#         proxy_set_header	X-Forwarded-Host $server_name;
+#         proxy_set_header	X-Forwarded-Proto https;
+#       }
+#     }
 

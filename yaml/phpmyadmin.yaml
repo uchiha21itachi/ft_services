@@ -15,7 +15,7 @@ spec:
       containers:
       - name: phpmyadmin
         imagePullPolicy: Never
-        image: phpmyadmin-my
+        image: ft-phpmyadmin
         ports:
         - containerPort: 5000
           name: phpmyadmin
@@ -23,7 +23,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: phpmyadmin-service
+  name: phpmyadmin
 spec:
   selector:
     app: phpmyadmin

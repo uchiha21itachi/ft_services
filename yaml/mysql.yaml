@@ -17,10 +17,7 @@ spec:
       containers:
       - name: mysql
         imagePullPolicy: Never
-        image: mysql
-        ports:
-        - containerPort: 3306
-          name: mysql
+        image: ft-mysql
         volumeMounts:
         - name: mysql-ps
           mountPath: /var/lib/mysql/
@@ -53,4 +50,3 @@ spec:
     - port: 3306
       protocol: TCP
       name: mysql
-      targetPort: 3306

@@ -32,7 +32,7 @@
     -   chown -R www:www /var/lib/nginx
     -   chown -R www:www /www
 
-# Dir for config file (Replace with your custom .conf)
+# Dir for config file (Replace with your custom.conf)
     -   /etc/nginx/nginx.conf
 
 #Starting nginx

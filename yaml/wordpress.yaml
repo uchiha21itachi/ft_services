@@ -15,7 +15,7 @@ spec:
       containers:
       - name: wordpress
         imagePullPolicy: Never
-        image: wordpress
+        image: ft-wordpress
         ports:
         - containerPort: 5050
           name: wordpress

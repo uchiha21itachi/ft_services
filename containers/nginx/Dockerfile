@@ -8,7 +8,7 @@ RUN 	apk add openssh openrc
 RUN 	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
 
 # Getting nginx
-RUN	apk update && apk upgrade 
+RUN     apk update && apk upgrade 
 RUN 	apk add nginx && echo "Nginx install done" 
 RUN 	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
 RUN 	echo "daemon off;" >> /etc/nginx/nginx.conf

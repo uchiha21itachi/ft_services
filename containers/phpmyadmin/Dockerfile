@@ -27,4 +27,4 @@ COPY ./php_srcs/setup.sh .
 RUN chmod +x setup.sh
 EXPOSE 5000
 
-CMD "setup.sh"
+CMD "./setup.sh"
