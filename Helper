@@ -1,3 +1,9 @@
+--------------------------ALPINE LINUX HELPERS----------------------------------------
+#Installing and config openrc (to check rc-service {status, reload, stop, restart})
+    -   openrc &> /dev/null
+    -   touch /run/openrc/softlevel
+
+
 --------------------------DOCKER HELPERS----------------------------------------
 
 #Giving permission to docker to avoid sudo everytime
@@ -60,4 +66,15 @@
 
 //Helpful Links
 
-https://wiki.alpinelinux.org/wiki/Nginx
+    -   https://wiki.alpinelinux.org/wiki/Nginx
+
+#Setting up nginx php wordpress
+    -   https://codingwithmanny.medium.com/custom-wordpress-docker-setup-8851e98e6b8
+
+
+
+
+
+---------------------------NGINX HELPERS--------------------------
+#For installation and configuration
+    -   https://wiki.alpinelinux.org/wiki/MariaDB

@@ -460,7 +460,7 @@ CREATE TABLE `wp_users` (
 -- Déchargement des données de la table `wp_users`
 --
 INSERT INTO `wp_users` (`ID`, `user_login`, `user_pass`, `user_nicename`, `user_email`, `user_url`, `user_registered`, `user_activation_key`, `user_status`, `display_name`) VALUES
-(1, 'adem123', '$1$YZRi5e2v$SO3lC00EUZYzlhYnMhawp.', 'adem123', 'adjemaar@student.42.fr', '', '2020-01-29 03:43:13', '', 0, 'adem123'),
+(1, 'yash123', '$1$YZRi5e2v$SO3lC00EUZYzlhYnMhawp.', 'yash123', 'yassharm@student.42.fr', '', '2020-01-29 03:43:13', '', 0, 'yash123'),
 (2, 'amine', '$P$BZOtst3zHtOY5I5zbX7y.fBNhqlVdv0', 'amine', 'amine@zebi.ciom', '', '2020-03-10 03:12:43', '1583809963:$P$BcVzqbleHmQ/ECmGJXjrQtAN.E0LNJ.', 0, 'amine'),
 (3, 'tina', '$P$BnJCqDMBUxlsVJbw.kXa399DYN8E0h/', 'tina', 'tina@zimbabew.com', '', '2020-03-10 03:13:01', '1583809981:$P$B/M6J6F/sFPBede/WRKqp7sBI8VgYB0', 0, 'tina');
 

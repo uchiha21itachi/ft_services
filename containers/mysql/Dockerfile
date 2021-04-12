@@ -13,18 +13,18 @@
 FROM alpine:latest
 
 # Getting wget
-RUN apk update
-RUN apk add wget curl
-RUN apk add bash
-RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
+RUN 	apk update
+RUN 	apk add wget curl
+RUN 	apk add bash
+RUN 	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
 
-# RUN	apk add mariadb mariadb-client
+RUN	apk add mariadb mariadb-client openrc
 
-COPY ./sql_srcs/mariadb-server.cnf /etc/my.cnf.d/
-COPY ./sql_srcs/create_user.sql .
-COPY ./sql_srcs/wordpress.sql .
-COPY ./sql_srcs/create_table.sql .
-COPY ./sql_srcs/setup.sh .
-RUN chmod +x setup.sh
-CMD ["./setup.sh"]
+# COPY 	./sql_srcs/mariadb-server.cnf /etc/my.cnf.d/
+COPY 	./sql_srcs/wordpress.sql .
+# COPY 	./sql_srcs/create_user.sql .
+COPY 	./sql_srcs/setup.sh .
+RUN 	chmod +x setup.sh
+EXPOSE  3306
+CMD 	"./setup.sh"
 
