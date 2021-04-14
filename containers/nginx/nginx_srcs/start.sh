@@ -1,3 +1,4 @@
+
 echo "starting ......"
 
 echo 'root:password' | chpasswd
@@ -7,16 +8,19 @@ openrc
 echo "openrc done"
 touch /run/openrc/softlevel
 echo "touch done"
-service nginx start
+
+
+
+rc-service nginx start
 echo "nginx start done"
-service sshd start
+rc-service sshd start
 echo "sshd start done"
 
 tail -F /dev/null
-
-echo "Nginx started.............."
-echo "SSHD started.............."
-sleep 5
+# 
+# echo "Nginx started.............."
+# echo "SSHD started.............."
+# sleep 5
 
 nginx -t 
 

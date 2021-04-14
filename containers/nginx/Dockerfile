@@ -29,6 +29,8 @@ RUN	adduser -D -g 'www' www
 
 #Creating a dir for html files 
 RUN	chown -R www:www /var/lib/nginx
+RUN	chown -R www:www /var/run/sshd
+RUN	chown -R www:www /run/nginx
 RUN	chown -R www:www /www 
 
 RUN nginx -t
@@ -50,6 +52,8 @@ WORKDIR /
 COPY ./nginx_srcs/start.sh .
 RUN chmod +x start.sh
 RUN nginx -t
+RUN chown -R nginx:nginx /run/nginx/
+RUN chmod 775 /run/nginx/
 
 EXPOSE 80
 EXPOSE 443

@@ -20,12 +20,14 @@ RUN rm -rf wordpress-5.6.tar.gz
 # RUN	chown -R www:data /www/wordpress
 # RUN chown -R www-data:www-data *
 
-WORKDIR /www/wordpress
+WORKDIR /www/wordpress/
 RUN ls -la
 
 RUN echo "copying wp-config.php"
-COPY ./wordpress_srcs/wp-config.php /var/www/wordpress
+COPY ./wordpress_srcs/wp-config.php /www/wordpress/
 COPY ./wordpress_srcs/setup.sh .
+RUN ls -ll
+RUN sleep 5
 RUN chmod +x setup.sh
 EXPOSE 5050
 
