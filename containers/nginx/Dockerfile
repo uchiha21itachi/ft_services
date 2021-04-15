@@ -35,7 +35,7 @@ RUN	chown -R www:www /www
 
 RUN nginx -t
 
-RUN	mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.org
+RUN	    mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.org
 COPY	./nginx_srcs/wordpress.conf /etc/nginx/conf.d/
 COPY	./nginx_srcs/nginx.conf /etc/nginx/
 COPY	./nginx_srcs/index.html /www/
@@ -51,7 +51,7 @@ RUN ls -l
 WORKDIR /
 COPY ./nginx_srcs/start.sh .
 RUN chmod +x start.sh
-RUN nginx -t
+# RUN nginx -t
 RUN chown -R nginx:nginx /run/nginx/
 RUN chmod 775 /run/nginx/
 

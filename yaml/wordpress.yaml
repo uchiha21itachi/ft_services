@@ -24,6 +24,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: wordpress
+  annotations:
+    metallb.universe.tf/allow-shared-ip: address-pool
 spec:
   selector:
     app: wordpress
@@ -33,3 +35,4 @@ spec:
       protocol: TCP
       name: wordpress
   type: LoadBalancer
+  loadBalancerIP: 172.17.0.230

@@ -60,6 +60,8 @@ spec:
       targetPort: 80
       protocol: TCP
   type: LoadBalancer
+  loadBalancerIP: 172.17.0.230
+
 
 ---
 apiVersion: v1

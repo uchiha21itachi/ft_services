@@ -24,6 +24,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: phpmyadmin
+  annotations:
+    metallb.universe.tf/allow-shared-ip: address-pool
 spec:
   selector:
     app: phpmyadmin
@@ -33,3 +35,5 @@ spec:
       protocol: TCP
       name: phpmyadmin
   type: LoadBalancer
+  loadBalancerIP: 172.17.0.230
+
