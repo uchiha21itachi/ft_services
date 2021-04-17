@@ -6,13 +6,13 @@
 -- Généré le : mer. 29 jan. 2020 à 03:51
 -- Version du serveur :  5.7.29
 -- Version de PHP : 7.3.11-1~deb10u1
-
-CREATE DATABASE wordpress;
-USE wordpress;
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
+-- 
+-- CREATE DATABASE wordpress;
+-- USE wordpress;
+-- SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+-- SET AUTOCOMMIT = 0;
+-- START TRANSACTION;
+-- SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;

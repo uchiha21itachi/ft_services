@@ -20,6 +20,8 @@ RUN	wget https://wordpress.org/wordpress-5.6.tar.gz
 RUN tar -zxvf wordpress-5.6.tar.gz
 RUN rm -rf wordpress-5.6.tar.gz
 
+RUN	adduser -D -g 'www' www
+
 RUN	chown -R www:www /var/lib/nginx
 RUN	chown -R www:www /var/run/nginx
 # RUN	chown -R www:www /var/www 

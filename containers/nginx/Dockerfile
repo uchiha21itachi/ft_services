@@ -4,8 +4,8 @@ FROM alpine:latest
 RUN 	apk update
 RUN 	apk add wget
 RUN 	apk add bash
-RUN 	apk add openssh openrc
-RUN 	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
+RUN 	apk add openssh 
+# RUN     apk add openrc --no-cache
 
 # Getting nginx
 RUN     apk update && apk upgrade 
@@ -33,7 +33,14 @@ RUN	chown -R www:www /var/run/sshd
 RUN	chown -R www:www /run/nginx
 RUN	chown -R www:www /www 
 
-RUN nginx -t
+# RUN nginx -t
+
+RUN apk add util-linux openrc
+VOLUME /sys/fs/cgroup 
+RUN rc-update add rsyslog default\
+  && mkdir /run/openrc\
+  && touch /run/openrc/softlevel  
+
 
 RUN	    mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.org
 COPY	./nginx_srcs/wordpress.conf /etc/nginx/conf.d/
@@ -49,11 +56,10 @@ RUN rm default.conf
 RUN ls -l
 
 WORKDIR /
-COPY ./nginx_srcs/start.sh .
-RUN chmod +x start.sh
-# RUN nginx -t
-RUN chown -R nginx:nginx /run/nginx/
-RUN chmod 775 /run/nginx/
+COPY ./nginx_srcs/start.sh /usr/local/bin/
+# RUN chmod/+x start.sh
+RUN chmod u+x,g+x /usr/local/bin/start.sh\
+  && ln -s /usr/local/bin/start.sh /
 
 EXPOSE 80
 EXPOSE 443

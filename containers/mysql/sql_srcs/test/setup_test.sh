@@ -69,3 +69,42 @@
 mysql_install_db --user=mysql --ldata=/var/lib/mysql
 /usr/bin/mysqld --console --init_file=/etc/mysql/config.sql
 /usr/bin/mysqld --console --init_file=/etc/mysql/config.sql
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------
+
+
+# nohup ./mysql_start.sh > /dev/null 2>&1 &
+
+openrc &> /dev/null
+touch /run/openrc/softlevel
+/etc/
+# /etc/init.d/mariadb setup &> /dev/null
+
+echo "mariaDB setup done. Now executing mysql_start,.sh"
+
+service mariadb restart &> /dev/null
+echo "Maria db restarted now creating wordpress database.."
+mysql --user=root << EOF
+  
+  FLUSH PRIVILEGES;
+  CREATE DATABASE wordpress;
+  CREATE USER 'root'@'%' IDENTIFIED BY 'yash';
+  GRANT ALL ON wordpress.* TO 'wp_user'@'%' IDENTIFIED BY 'yash' WITH GRANT OPTION;
+  CREATE USER 'admin'@'%' IDENTIFIED BY 'yash';
+  GRANT ALL ON *.* TO 'admin'@'%' IDENTIFIED BY 'yash' WITH GRANT OPTION;
+  FLUSH PRIVILEGES;
+  
+EOF
+
+mysql --user=root wordpress < /wordpress.sql
+
+printf "Database started !\n"
+
+tail -F /dev/null
+
+
