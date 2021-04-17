@@ -18,15 +18,14 @@ RUN 	apk add wget curl
 RUN 	apk add bash
 RUN 	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
 
-# RUN	apk add mariadb mariadb-client openrc
-RUN	apk add mysql mysql-client 
+RUN	apk add mariadb mariadb-client openrc
+# RUN	apk add mysql mysql-client 
 
 RUN apk add util-linux openrc
-# VOLUME /sys/fs/cgroup 
+VOLUME /sys/fs/cgroup 
 # RUN rc-update add rsyslog default\
-# RUN mkdir /run/openrc
-# RUN touch /run/openrc/softlevel  
-
+RUN mkdir /run/openrc
+RUN touch /run/openrc/softlevel  
 
 COPY 	./sql_srcs/wordpress.sql .
 COPY 	./sql_srcs/mysql_start.sh .

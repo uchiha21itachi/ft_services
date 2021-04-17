@@ -36,10 +36,10 @@ RUN	chown -R www:www /www
 # RUN nginx -t
 
 RUN apk add util-linux openrc
-VOLUME /sys/fs/cgroup 
-RUN rc-update add rsyslog default\
-  && mkdir /run/openrc\
-  && touch /run/openrc/softlevel  
+# VOLUME /sys/fs/cgroup 
+# RUN rc-update add rsyslog default\
+#   && mkdir /run/openrc\
+#   && touch /run/openrc/softlevel  
 
 
 RUN	    mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.org
