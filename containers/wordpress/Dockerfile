@@ -24,11 +24,7 @@ RUN	adduser -D -g 'www' www
 
 RUN	chown -R www:www /var/lib/nginx
 RUN	chown -R www:www /var/run/nginx
-# RUN	chown -R www:www /var/www 
-
-# RUN	adduser -D -g 'www' data
-# RUN	chown -R www:data /www/wordpress
-# RUN chown -R www-data:www-data *
+RUN	chown -R www:www /var/www 
 
 WORKDIR /www/wordpress/
 RUN ls -la
@@ -40,8 +36,7 @@ COPY ./wordpress_srcs/wp-config.php /www/wordpress/
 COPY ./wordpress_srcs/nginx.conf /etc/nginx
 COPY ./wordpress_srcs/setup.sh .
 RUN ls -ll
-RUN sleep 5
+RUN nginx -t
 RUN chmod +x setup.sh
 EXPOSE 5050
-
 CMD "./setup.sh"

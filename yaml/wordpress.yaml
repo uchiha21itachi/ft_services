@@ -16,6 +16,13 @@ spec:
       - name: wordpress
         imagePullPolicy: Never
         image: ft-wordpress
+        env:
+        - name: WORDPRESS_DB_HOST
+          value: mysql-svc
+        - name: WORDPRESS_DB_USER
+          value: root
+        - name: WORDPRESS_DB_PASSWORD
+          value: yash
         ports:
         - containerPort: 5050
           name: wordpress

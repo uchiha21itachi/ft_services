@@ -28,11 +28,11 @@ RUN mkdir /run/openrc
 RUN touch /run/openrc/softlevel  
 
 COPY 	./sql_srcs/wordpress.sql .
-COPY 	./sql_srcs/mysql_start.sh .
-COPY 	./sql_srcs/mariadb-server.cnf /etc/my.cnf.d/
+# COPY 	./sql_srcs/mysql_start.sh .
+# COPY 	./sql_srcs/mariadb-server.cnf /etc/my.cnf.d/
 COPY 	./sql_srcs/setup.sh .
 RUN 	chmod +x setup.sh
-RUN 	chmod +x mysql_start.sh
+# RUN 	chmod +x mysql_start.sh
 EXPOSE  3306
 CMD 	"./setup.sh"
 

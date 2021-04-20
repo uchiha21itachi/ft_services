@@ -20,16 +20,18 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'wordPress' );
+// define('WP_ALLOW_REPAIR', true);
+
+define( 'DB_NAME', 'wordpress' );
 
 /** MySQL database username */
-define( 'DB_USER', 'yash123' );
+define( 'DB_USER', 'root' );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', 'yash123' );
+define( 'DB_PASSWORD', 'yash' );
 
 /** MySQL hostname */
-define( 'DB_HOST', 'mysql' );
+define( 'DB_HOST', 'mysql-svc' );
 
 /** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
@@ -37,8 +39,8 @@ define( 'DB_CHARSET', 'utf8' );
 /** The Database Collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
 
-define( 'WP_HOME', 'https://172.17.0.230:5050' );
-define( 'WP_SITEURL', 'https://172.17.0.230:5050' );
+define( 'WP_HOME', 'http://172.17.0.230:5050' );
+define( 'WP_SITEURL', 'http://172.17.0.230:5050' );
 
 /**#@+
  * Authentication Unique Keys and Salts.
@@ -81,7 +83,7 @@ $table_prefix = 'wp_';
  *
  * @link https://wordpress.org/support/article/debugging-in-wordpress/
  */
-define( 'WP_DEBUG', false );
+define( 'WP_DEBUG', true );
 
 /* That's all, stop editing! Happy publishing. */
 

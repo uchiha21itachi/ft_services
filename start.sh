@@ -26,7 +26,7 @@ echo "Metallb Config Done"
 sleep 3
 
 kubectl apply -f yaml/metallb.yaml
-
+bash creator.sh
 
 
 

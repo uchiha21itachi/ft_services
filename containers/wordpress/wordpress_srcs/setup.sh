@@ -3,3 +3,5 @@
 # rm /var/www//wordpress/wp-config.php.bak
 
 php -S 0.0.0.0:5050 -t /www/wordpress/
+echo "here"
+nginx -g "daemon off;"

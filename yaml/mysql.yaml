@@ -7,8 +7,6 @@ spec:
     matchLabels:
       app: mysql
   replicas: 1
-  strategy:
-    type: Recreate
   template:
     metadata:
       labels:
@@ -18,6 +16,12 @@ spec:
       - name: mysql
         imagePullPolicy: Never
         image: ft-mysql
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: yash
+        ports:
+        - containerPort: 3306
+          name: mysql
         volumeMounts:
         - name: mysql-ps
           mountPath: /var/lib/mysql/
@@ -42,11 +46,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: mysql
+  name: mysql-svc
+  annotations:
+    metallb.universe.tf/allow-shared-ip : address-pool
 spec:
   selector:
     app: mysql
   ports:
     - port: 3306
       protocol: TCP
+      targetPort: 3306
       name: mysql
+  type: ClusterIP
