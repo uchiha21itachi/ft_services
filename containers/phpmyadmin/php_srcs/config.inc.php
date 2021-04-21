@@ -37,7 +37,7 @@ $cfg['Servers'][$i]['AllowNoPassword'] = true;
  */
 
 // /* User used to manipulate with storage */
-$cfg['Servers'][$i]['host'] = "mysql-svc";
+$cfg['Servers'][$i]['host'] = "mysql-svc.default.svc.cluster.local";
 $cfg['Servers'][$i]['port'] = "3306";
 $cfg['Servers'][$i]['user'] = "admin";
 // $cfg['Servers'][$i]['password'] = "yash";

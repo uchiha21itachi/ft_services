@@ -25,13 +25,13 @@
 define( 'DB_NAME', 'wordpress' );
 
 /** MySQL database username */
-define( 'DB_USER', 'root' );
+define( 'DB_USER', 'admin' );
 
 /** MySQL database password */
 define( 'DB_PASSWORD', 'yash' );
 
 /** MySQL hostname */
-define( 'DB_HOST', 'mysql-svc' );
+define( 'DB_HOST', 'mysql-svc.default.svc.cluster.local' );
 
 /** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
@@ -39,8 +39,8 @@ define( 'DB_CHARSET', 'utf8' );
 /** The Database Collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
 
-define( 'WP_HOME', 'http://172.17.0.230:5050' );
-define( 'WP_SITEURL', 'http://172.17.0.230:5050' );
+define( 'WP_HOME', 'https://172.17.0.230:5050' );
+define( 'WP_SITEURL', 'https://172.17.0.230:5050' );
 
 /**#@+
  * Authentication Unique Keys and Salts.

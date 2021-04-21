@@ -19,9 +19,9 @@ mysql --user=root << EOF
   
   FLUSH PRIVILEGES;
   CREATE DATABASE wordpress;
-  CREATE USER 'yash'@'%' IDENTIFIED BY 'yash';
+  CREATE USER 'yash'@'localhost' IDENTIFIED BY 'yash';
   GRANT ALL PRIVILEGES ON wordpress.* TO 'yash'@'%' IDENTIFIED BY 'yash' WITH GRANT OPTION;
-  CREATE USER 'admin'@'%' IDENTIFIED BY 'yash';
+  CREATE USER 'admin'@'localhost' IDENTIFIED BY 'yash';
   GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%' IDENTIFIED BY 'yash' WITH GRANT OPTION;
   FLUSH PRIVILEGES;
 

@@ -4,7 +4,8 @@ FROM alpine:latest
 RUN 	apk update
 RUN 	apk add wget
 RUN 	apk add bash
-RUN 	apk add openssh 
+RUN 	apk add openssh openssl
+
 # RUN     apk add openrc --no-cache
 
 # Getting nginx
@@ -33,21 +34,17 @@ RUN	chown -R www:www /var/run/sshd
 RUN	chown -R www:www /run/nginx
 RUN	chown -R www:www /www 
 
-# RUN nginx -t
 
 RUN apk add util-linux openrc
 # VOLUME /sys/fs/cgroup 
-# RUN rc-update add rsyslog default\
-#   && mkdir /run/openrc\
-#   && touch /run/openrc/softlevel  
 
+RUN chmod 700 /etc/ssl/private
+RUN chmod 700 /etc/ssl/certs
+RUN openssl req -x509 -nodes -subj '/CN=localhost' -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/server.key -out /etc/ssl/server.crt
 
-RUN	    mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.org
-COPY	./nginx_srcs/wordpress.conf /etc/nginx/conf.d/
-COPY	./nginx_srcs/nginx.conf /etc/nginx/
+RUN   mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.org
+COPY  ./nginx_srcs/nginx.conf /etc/nginx/
 COPY	./nginx_srcs/index.html /www/
-COPY	./nginx_srcs/server.crt /ssl_certificate/
-COPY	./nginx_srcs/server.key /ssl_certificate/
 COPY	./nginx_srcs/sshd_config /etc/ssh
 
 WORKDIR /etc/nginx/conf.d/

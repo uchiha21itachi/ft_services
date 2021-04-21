@@ -3,7 +3,7 @@ FROM alpine:latest
 # Getting wget
 RUN apk update
 RUN apk add wget curl
-RUN apk add bash
+RUN apk add bash openssl
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
 
 RUN apk update  && echo "update before Wordpress install : Done"
@@ -26,14 +26,18 @@ RUN	chown -R www:www /var/lib/nginx
 RUN	chown -R www:www /var/run/nginx
 RUN	chown -R www:www /var/www 
 
+
+RUN chmod 700 /etc/ssl/private
+RUN chmod 700 /etc/ssl/certs
+RUN openssl req -x509 -nodes -subj '/CN=localhost' -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/server.key -out /etc/ssl/server.crt
+
 WORKDIR /www/wordpress/
 RUN ls -la
 
 RUN echo "copying wp-config.php"
-COPY ./wordpress_srcs/server.crt /ssl_certificate/
-COPY ./wordpress_srcs/server.key /ssl_certificate/
+COPY ./wordpress_srcs/default.conf /etc/nginx/http.d/
 COPY ./wordpress_srcs/wp-config.php /www/wordpress/
-COPY ./wordpress_srcs/nginx.conf /etc/nginx
+
 COPY ./wordpress_srcs/setup.sh .
 RUN ls -ll
 RUN nginx -t

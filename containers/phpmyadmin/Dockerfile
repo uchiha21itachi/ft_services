@@ -3,7 +3,7 @@ FROM alpine:latest
 # Getting wget
 RUN apk update
 RUN apk add wget curl
-RUN apk add bash
+RUN apk add bash openssl
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
 
 
@@ -25,6 +25,9 @@ RUN wget https://files.phpmyadmin.net/phpMyAdmin/4.9.4/phpMyAdmin-4.9.4-all-lang
 RUN unzip phpMyAdmin-4.9.4-all-languages.zip
 RUN mv /phpMyAdmin-4.9.4-all-languages/* /var/www/phpMyAdmin
 
+RUN chmod 700 /etc/ssl/private
+RUN chmod 700 /etc/ssl/certs
+RUN openssl req -x509 -nodes -subj '/CN=localhost' -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/server.key -out /etc/ssl/server.crt
 
 #Creating new user and group 'www' for nginx
 RUN	adduser -D -g 'www' www
@@ -35,13 +38,9 @@ RUN	chown -R www:www /var/run/nginx
 RUN	chown -R www:www /var/www 
 
 
-
-
 WORKDIR /var/www/phpMyAdmin
 RUN     rm config.sample.inc.php
-COPY    ./php_srcs/nginx.conf /etc/nginx/
-COPY    ./php_srcs/server.crt /ssl_certificate/
-COPY    ./php_srcs/server.key /ssl_certificate/
+COPY    ./php_srcs/default.conf /etc/nginx/http.d/
 COPY    ./php_srcs/config.inc.php /var/www/phpMyAdmin
 COPY    ./php_srcs/setup.sh .
 RUN     chmod +x setup.sh

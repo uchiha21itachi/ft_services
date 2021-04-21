@@ -4,7 +4,7 @@ kubectl delete -f yaml/metallb.yaml
 kubectl delete -f yaml/wordpress.yaml
 kubectl delete -f yaml/phpmyadmin.yaml
 kubectl delete -f yaml/nginx.yaml
-kubectl delete -f yaml/mysql.yaml
+# kubectl delete -f yaml/mysql.yaml
 sleep 1
 echo "updating docker file......"
 eval $(minikube -p minikube docker-env)
