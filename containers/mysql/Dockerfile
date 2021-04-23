@@ -19,20 +19,22 @@ RUN 	apk add bash
 RUN 	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
 
 RUN	apk add mariadb mariadb-client openrc
-# RUN	apk add mysql mysql-client 
 
 RUN apk add util-linux openrc
 VOLUME /sys/fs/cgroup 
-# RUN rc-update add rsyslog default\
 RUN mkdir /run/openrc
 RUN touch /run/openrc/softlevel  
 
+RUN apk add telegraf
+RUN mkdir -p /etc/telegraf/
+RUN mkdir -p /var/log/telegraf
+RUN touch /var/log/telegraf/telegraf.log
+COPY ./sql_srcs/telegraf.conf /etc/telegraf/telegraf.conf
+RUN export TELEGRAF_CONFIG_PATH="/etc/telegraf/telegraf.conf"
+
 COPY 	./sql_srcs/wordpress.sql .
-# COPY 	./sql_srcs/mysql_start.sh .
-# COPY 	./sql_srcs/mariadb-server.cnf /etc/my.cnf.d/
 COPY 	./sql_srcs/setup.sh .
 RUN 	chmod +x setup.sh
-# RUN 	chmod +x mysql_start.sh
 EXPOSE  3306
 CMD 	"./setup.sh"
 

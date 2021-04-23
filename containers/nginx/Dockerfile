@@ -52,6 +52,13 @@ RUN ls -l
 RUN rm default.conf
 RUN ls -l
 
+RUN apk add telegraf
+RUN mkdir -p /etc/telegraf/
+RUN mkdir -p /var/log/telegraf
+RUN touch /var/log/telegraf/telegraf.log
+COPY ./nginx_srcs/telegraf.conf /etc/telegraf/telegraf.conf
+RUN export TELEGRAF_CONFIG_PATH="/etc/telegraf/telegraf.conf"
+
 WORKDIR /
 COPY ./nginx_srcs/start.sh /usr/local/bin/
 # RUN chmod/+x start.sh

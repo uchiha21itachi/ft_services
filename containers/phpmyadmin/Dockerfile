@@ -37,6 +37,13 @@ RUN	chown -R www:www /var/lib/nginx
 RUN	chown -R www:www /var/run/nginx
 RUN	chown -R www:www /var/www 
 
+RUN apk add telegraf
+RUN mkdir -p /etc/telegraf/
+RUN mkdir -p /var/log/telegraf
+RUN touch /var/log/telegraf/telegraf.log
+COPY ./php_srcs/telegraf.conf /etc/telegraf/telegraf.conf
+RUN export TELEGRAF_CONFIG_PATH="/etc/telegraf/telegraf.conf"
+
 
 WORKDIR /var/www/phpMyAdmin
 RUN     rm config.sample.inc.php

@@ -5,7 +5,7 @@ echo "Initializing the openrc"
 openrc &> /dev/null
 touch /run/openrc/softlevel
 
-/etc/init.d/mariadb setup 
+telegraf & /etc/init.d/mariadb setup 
 echo "Mariadb setup done"
 
 sed -i "s|.*bind-address\s*=.*|bind-address=0.0.0.0|g" /etc/my.cnf.d/mariadb-server.cnf

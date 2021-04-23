@@ -31,6 +31,14 @@ RUN chmod 700 /etc/ssl/private
 RUN chmod 700 /etc/ssl/certs
 RUN openssl req -x509 -nodes -subj '/CN=localhost' -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/server.key -out /etc/ssl/server.crt
 
+RUN apk add telegraf
+RUN mkdir -p /etc/telegraf/
+RUN mkdir -p /var/log/telegraf
+RUN touch /var/log/telegraf/telegraf.log
+COPY ./wordpress_srcs/telegraf.conf /etc/telegraf/telegraf.conf
+RUN export TELEGRAF_CONFIG_PATH="/etc/telegraf/telegraf.conf"
+
+
 WORKDIR /www/wordpress/
 RUN ls -la
 
