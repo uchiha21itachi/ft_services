@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: influxdb
+  labels:
+    app: influxdb
+spec:
+  serviceName: influxdb
+  replicas: 1
+  selector:
+    matchLabels:
+      app: influxdb
+  template:
+    metadata:
+      labels:
+        app: influxdb
+    spec:
+      containers:
+      - name: influxdb
+        image: ft-influxdb
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8086
+          name: influxdb
+        livenessProbe:
+          exec:
+            command:
+            - /bin/sh
+            - -c
+            - ps -o comm | grep 'telegraf' && ps -o comm | grep 'influxd'
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        volumeMounts:
+        - name: influxdb-pv
+          mountPath: /var/lib/influxdb
+      volumes:
+      - name: influxdb-pv
+        persistentVolumeClaim:
+          claimName: influxdb-volume
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: influxdb
+spec:
+  type: ClusterIP
+  selector:
+    app: influxdb
+  ports:
+    - name: influxdb
+      protocol: TCP
+      port: 8086
+      targetPort: 8086

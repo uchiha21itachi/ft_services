@@ -25,6 +25,16 @@ https://github.com/tallaire42/ft_services
     -   kubectl get pods -o wide
     -   kubectl describe pods ${pod_name}
 
+#Importand debugging command
+    -   kubectl get svc --namespace=kube-system
+        #check if service is running or not
+
+    -   kubectl run curl --image=radial/busyboxplus:curl -i --tty
+        #will open a terminal
+
+    -   nslookup 'service name'
+
+    
 ---------------------------METTALLB HELPERS--------------------------
 #For Shared Ip
     -   https://metallb.universe.tf/usage/

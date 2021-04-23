@@ -23,25 +23,12 @@ spec:
         - containerPort: 3306
           name: mysql
         volumeMounts:
-        - name: mysql-ps
+        - name: mysql-pv-claim
           mountPath: /var/lib/mysql/
       volumes:
-      - name: mysql-ps
+      - name: mysql-pv-claim
         persistentVolumeClaim:
           claimName: mysql-pv-claim
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: mysql-pv-claim
-  labels:
-    app: mysql
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 1Gi
 ---
 apiVersion: v1
 kind: Service
