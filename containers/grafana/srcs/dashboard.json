@@ -44,7 +44,7 @@
 		  "rgba(237, 129, 40, 0.89)",
 		  "rgba(50, 172, 45, 0.97)"
 		],
-		"datasource": "InfluxDB",
+		"datasource": "influxdb",
 		"fieldConfig": {
 		  "defaults": {
 			"custom": {}
@@ -168,7 +168,7 @@
 		  "rgba(237, 129, 40, 0.89)",
 		  "rgba(50, 172, 45, 0.97)"
 		],
-		"datasource": "InfluxDB",
+		"datasource": "influxdb",
 		"fieldConfig": {
 		  "defaults": {
 			"custom": {}
@@ -292,7 +292,7 @@
 		  "rgba(237, 129, 40, 0.89)",
 		  "rgba(50, 172, 45, 0.97)"
 		],
-		"datasource": "InfluxDB",
+		"datasource": "influxdb",
 		"fieldConfig": {
 		  "defaults": {
 			"custom": {}
@@ -409,7 +409,7 @@
 	  },
 	  {
 		"columns": [],
-		"datasource": "InfluxDB",
+		"datasource": "influxdb",
 		"fieldConfig": {
 		  "defaults": {
 			"custom": {}
@@ -591,7 +591,7 @@
 		"bars": false,
 		"dashLength": 10,
 		"dashes": false,
-		"datasource": "InfluxDB",
+		"datasource": "influxdb",
 		"fieldConfig": {
 		  "defaults": {
 			"custom": {}
@@ -854,7 +854,7 @@
 		"bars": false,
 		"dashLength": 10,
 		"dashes": false,
-		"datasource": "InfluxDB",
+		"datasource": "influxdb",
 		"fieldConfig": {
 		  "defaults": {
 			"custom": {}
@@ -1051,7 +1051,7 @@
 		"bars": false,
 		"dashLength": 10,
 		"dashes": false,
-		"datasource": "InfluxDB",
+		"datasource": "influxdb",
 		"fieldConfig": {
 		  "defaults": {
 			"custom": {}
@@ -1196,7 +1196,7 @@
 		"bars": false,
 		"dashLength": 10,
 		"dashes": false,
-		"datasource": "InfluxDB",
+		"datasource": "influxdb",
 		"fieldConfig": {
 		  "defaults": {
 			"custom": {}
@@ -1391,7 +1391,7 @@
 		"bars": false,
 		"dashLength": 10,
 		"dashes": false,
-		"datasource": "InfluxDB",
+		"datasource": "influxdb",
 		"fieldConfig": {
 		  "defaults": {
 			"custom": {}
@@ -1536,7 +1536,7 @@
 		"bars": false,
 		"dashLength": 10,
 		"dashes": false,
-		"datasource": "InfluxDB",
+		"datasource": "influxdb",
 		"fieldConfig": {
 		  "defaults": {
 			"custom": {}
@@ -1755,7 +1755,7 @@
 		"bars": false,
 		"dashLength": 10,
 		"dashes": false,
-		"datasource": "InfluxDB",
+		"datasource": "influxdb",
 		"fieldConfig": {
 		  "defaults": {
 			"custom": {}
@@ -1903,7 +1903,7 @@
 		"bars": false,
 		"dashLength": 10,
 		"dashes": false,
-		"datasource": "InfluxDB",
+		"datasource": "influxdb",
 		"fieldConfig": {
 		  "defaults": {
 			"custom": {}
@@ -2101,7 +2101,7 @@
 		"bars": false,
 		"dashLength": 10,
 		"dashes": false,
-		"datasource": "InfluxDB",
+		"datasource": "influxdb",
 		"fieldConfig": {
 		  "defaults": {
 			"custom": {}
@@ -2249,7 +2249,7 @@
 		"bars": false,
 		"dashLength": 10,
 		"dashes": false,
-		"datasource": "InfluxDB",
+		"datasource": "influxdb",
 		"fieldConfig": {
 		  "defaults": {
 			"custom": {}
@@ -2471,7 +2471,7 @@
 		"bars": false,
 		"dashLength": 10,
 		"dashes": false,
-		"datasource": "InfluxDB",
+		"datasource": "influxdb",
 		"fieldConfig": {
 		  "defaults": {
 			"custom": {}
@@ -2616,7 +2616,7 @@
 		"bars": false,
 		"dashLength": 10,
 		"dashes": false,
-		"datasource": "InfluxDB",
+		"datasource": "influxdb",
 		"fieldConfig": {
 		  "defaults": {
 			"custom": {}
@@ -2811,7 +2811,7 @@
 		"bars": false,
 		"dashLength": 10,
 		"dashes": false,
-		"datasource": "InfluxDB",
+		"datasource": "influxdb",
 		"fieldConfig": {
 		  "defaults": {
 			"custom": {}
@@ -2956,7 +2956,7 @@
 		"bars": false,
 		"dashLength": 10,
 		"dashes": false,
-		"datasource": "InfluxDB",
+		"datasource": "influxdb",
 		"fieldConfig": {
 		  "defaults": {
 			"custom": {}
@@ -3175,7 +3175,7 @@
 		"bars": false,
 		"dashLength": 10,
 		"dashes": false,
-		"datasource": "InfluxDB",
+		"datasource": "influxdb",
 		"fieldConfig": {
 		  "defaults": {
 			"custom": {}
@@ -3320,7 +3320,7 @@
 		"bars": false,
 		"dashLength": 10,
 		"dashes": false,
-		"datasource": "InfluxDB",
+		"datasource": "influxdb",
 		"fieldConfig": {
 		  "defaults": {
 			"custom": {}
@@ -3515,7 +3515,7 @@
 		"bars": false,
 		"dashLength": 10,
 		"dashes": false,
-		"datasource": "InfluxDB",
+		"datasource": "influxdb",
 		"fieldConfig": {
 		  "defaults": {
 			"custom": {}
@@ -3660,7 +3660,7 @@
 		"bars": false,
 		"dashLength": 10,
 		"dashes": false,
-		"datasource": "InfluxDB",
+		"datasource": "influxdb",
 		"fieldConfig": {
 		  "defaults": {
 			"custom": {}
@@ -3879,7 +3879,7 @@
 		"bars": false,
 		"dashLength": 10,
 		"dashes": false,
-		"datasource": "InfluxDB",
+		"datasource": "influxdb",
 		"fieldConfig": {
 		  "defaults": {
 			"custom": {}
@@ -4024,7 +4024,7 @@
 		"bars": false,
 		"dashLength": 10,
 		"dashes": false,
-		"datasource": "InfluxDB",
+		"datasource": "influxdb",
 		"fieldConfig": {
 		  "defaults": {
 			"custom": {}
@@ -4219,7 +4219,7 @@
 		"bars": false,
 		"dashLength": 10,
 		"dashes": false,
-		"datasource": "InfluxDB",
+		"datasource": "influxdb",
 		"fieldConfig": {
 		  "defaults": {
 			"custom": {}
@@ -4364,7 +4364,7 @@
 		"bars": false,
 		"dashLength": 10,
 		"dashes": false,
-		"datasource": "InfluxDB",
+		"datasource": "influxdb",
 		"fieldConfig": {
 		  "defaults": {
 			"custom": {}
@@ -4583,7 +4583,7 @@
 		"bars": false,
 		"dashLength": 10,
 		"dashes": false,
-		"datasource": "InfluxDB",
+		"datasource": "influxdb",
 		"fieldConfig": {
 		  "defaults": {
 			"custom": {}
@@ -4728,7 +4728,7 @@
 		"bars": false,
 		"dashLength": 10,
 		"dashes": false,
-		"datasource": "InfluxDB",
+		"datasource": "influxdb",
 		"fieldConfig": {
 		  "defaults": {
 			"custom": {}
@@ -4923,7 +4923,7 @@
 		"bars": false,
 		"dashLength": 10,
 		"dashes": false,
-		"datasource": "InfluxDB",
+		"datasource": "influxdb",
 		"fieldConfig": {
 		  "defaults": {
 			"custom": {}
@@ -5068,7 +5068,7 @@
 		"bars": false,
 		"dashLength": 10,
 		"dashes": false,
-		"datasource": "InfluxDB",
+		"datasource": "influxdb",
 		"fieldConfig": {
 		  "defaults": {
 			"custom": {}
@@ -5287,7 +5287,7 @@
 		"bars": false,
 		"dashLength": 10,
 		"dashes": false,
-		"datasource": "InfluxDB",
+		"datasource": "influxdb",
 		"fieldConfig": {
 		  "defaults": {
 			"custom": {}
@@ -5432,7 +5432,7 @@
 		"bars": false,
 		"dashLength": 10,
 		"dashes": false,
-		"datasource": "InfluxDB",
+		"datasource": "influxdb",
 		"fieldConfig": {
 		  "defaults": {
 			"custom": {}
@@ -5627,7 +5627,7 @@
 		"bars": false,
 		"dashLength": 10,
 		"dashes": false,
-		"datasource": "InfluxDB",
+		"datasource": "influxdb",
 		"fieldConfig": {
 		  "defaults": {
 			"custom": {}
@@ -5772,7 +5772,7 @@
 		"bars": false,
 		"dashLength": 10,
 		"dashes": false,
-		"datasource": "InfluxDB",
+		"datasource": "influxdb",
 		"fieldConfig": {
 		  "defaults": {
 			"custom": {}
@@ -5991,7 +5991,7 @@
 		"bars": false,
 		"dashLength": 10,
 		"dashes": false,
-		"datasource": "InfluxDB",
+		"datasource": "influxdb",
 		"fieldConfig": {
 		  "defaults": {
 			"custom": {}
@@ -6136,7 +6136,7 @@
 		"bars": false,
 		"dashLength": 10,
 		"dashes": false,
-		"datasource": "InfluxDB",
+		"datasource": "influxdb",
 		"fieldConfig": {
 		  "defaults": {
 			"custom": {}
@@ -6331,7 +6331,7 @@
 		"bars": false,
 		"dashLength": 10,
 		"dashes": false,
-		"datasource": "InfluxDB",
+		"datasource": "influxdb",
 		"fieldConfig": {
 		  "defaults": {
 			"custom": {}
@@ -6476,7 +6476,7 @@
 		"bars": false,
 		"dashLength": 10,
 		"dashes": false,
-		"datasource": "InfluxDB",
+		"datasource": "influxdb",
 		"fieldConfig": {
 		  "defaults": {
 			"custom": {}
@@ -6679,7 +6679,7 @@
 			"text": "All",
 			"value": "$__all"
 		  },
-		  "datasource": "InfluxDB",
+		  "datasource": "influxdb",
 		  "definition": "",
 		  "hide": 0,
 		  "includeAll": true,
@@ -6705,7 +6705,7 @@
 			"text": "All",
 			"value": "$__all"
 		  },
-		  "datasource": "InfluxDB",
+		  "datasource": "influxdb",
 		  "definition": "",
 		  "hide": 0,
 		  "includeAll": true,

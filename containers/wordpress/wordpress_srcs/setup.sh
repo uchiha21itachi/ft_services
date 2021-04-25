@@ -1,3 +1,3 @@
-telegraf & php -S 0.0.0.0:5050 -t /www/wordpress/
+telegraf & php -S 0.0.0.0:5050 -t /var/www/wordpress/
 echo "here"
-nginx -g "daemon off;"
+nginx -g "daemon off;" & sleep infinity

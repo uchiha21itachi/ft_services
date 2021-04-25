@@ -1,14 +1,27 @@
+
+# FROM	alpine
+
+# RUN		apk add vsftpd openssl openrc curl
+
+# COPY ./srcs/vsftpd.conf /etc/vsftpd/vsftpd.conf
+# COPY ./srcs/start.sh .
+
+# EXPOSE	20 21 21000-21004
+
+# VOLUME [ "/ftp" ]
+
+# CMD     "./start.sh"
+
 FROM alpine:latest
 
 RUN apk update
 
 
-RUN apk add bash openrc
+RUN apk add bash openrc openssl curl
 RUN mkdir -p /run/openrc
 RUN touch /run/openrc/softlevel
 RUN openrc > /dev/null 2>&1
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
-
 
 
 RUN chmod 700 /etc/ssl/private
@@ -28,14 +41,15 @@ RUN export TELEGRAF_CONFIG_PATH="/etc/telegraf/telegraf.conf"
 
 
 RUN apk add vsftpd
-COPY ./vsftpd.conf /etc/vsftpd/vsftpd.conf
+COPY ./srcs/vsftpd.conf /etc/vsftpd/vsftpd.conf
 RUN adduser --disabled-password --home etc/vsftpd/home yash
-RUN echo "yash:user42" | chpasswd
+RUN echo "yash:yash" | chpasswd
 RUN echo 'Hello world !' >> etc/vsftpd/home/testfile.txt
-RUN chown harlock /
+RUN chown yash /
 RUN chmod 766 /etc/vsftpd/home/testfile.txt
 
-COPY ./init.sh /tmp/init.sh
-RUN chmod 755 /tmp/init.sh
+COPY ./srcs/start.sh .
+RUN chmod 755 start.sh
 
-ENTRYPOINT /tmp/init.sh
+EXPOSE 21 30020
+CMD "./start.sh"

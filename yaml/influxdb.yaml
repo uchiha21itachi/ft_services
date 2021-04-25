@@ -1,11 +1,10 @@
 apiVersion: apps/v1
-kind: StatefulSet
+kind: Deployment
 metadata:
   name: influxdb
   labels:
     app: influxdb
 spec:
-  serviceName: influxdb
   replicas: 1
   selector:
     matchLabels:
@@ -31,12 +30,12 @@ spec:
           initialDelaySeconds: 30
           periodSeconds: 10
         volumeMounts:
-        - name: influxdb-pv
+        - name: influxdb-pv-claim
           mountPath: /var/lib/influxdb
       volumes:
-      - name: influxdb-pv
+      - name: influxdb-pv-claim
         persistentVolumeClaim:
-          claimName: influxdb-volume
+          claimName: influxdb-pv-claim
 ---
 apiVersion: v1
 kind: Service

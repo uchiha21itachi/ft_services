@@ -13,9 +13,9 @@ RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN	mkdir /run/nginx
-RUN mkdir /www
+# RUN mkdir /www
 
-WORKDIR /www
+WORKDIR /var/www
 RUN	wget https://wordpress.org/wordpress-5.6.tar.gz
 RUN tar -zxvf wordpress-5.6.tar.gz
 RUN rm -rf wordpress-5.6.tar.gz
@@ -39,12 +39,12 @@ COPY ./wordpress_srcs/telegraf.conf /etc/telegraf/telegraf.conf
 RUN export TELEGRAF_CONFIG_PATH="/etc/telegraf/telegraf.conf"
 
 
-WORKDIR /www/wordpress/
+WORKDIR /var/www/wordpress/
 RUN ls -la
 
 RUN echo "copying wp-config.php"
 COPY ./wordpress_srcs/default.conf /etc/nginx/http.d/
-COPY ./wordpress_srcs/wp-config.php /www/wordpress/
+COPY ./wordpress_srcs/wp-config.php /var/www/wordpress/
 
 COPY ./wordpress_srcs/setup.sh .
 RUN ls -ll
