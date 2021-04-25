@@ -34,6 +34,10 @@ https://github.com/tallaire42/ft_services
 
     -   nslookup 'service name'
 
+#To stop a service inside a container
+    -   kubectl exec deploy/APP -- pkill service
+        {APP - nginx, wordpress, ftp}
+        {SERVICE - php, nginx, vsftpd, mariadb, etc} 
     
 ---------------------------METTALLB HELPERS--------------------------
 #For Shared Ip

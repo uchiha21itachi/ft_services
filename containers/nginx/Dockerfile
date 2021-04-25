@@ -59,6 +59,9 @@ RUN touch /var/log/telegraf/telegraf.log
 COPY ./nginx_srcs/telegraf.conf /etc/telegraf/telegraf.conf
 RUN export TELEGRAF_CONFIG_PATH="/etc/telegraf/telegraf.conf"
 
+RUN adduser -D yash
+RUN echo "yash:yash"|chpasswd
+
 WORKDIR /
 COPY ./nginx_srcs/start.sh /usr/local/bin/
 # RUN chmod/+x start.sh

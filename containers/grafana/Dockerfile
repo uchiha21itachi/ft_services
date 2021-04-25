@@ -34,10 +34,12 @@ WORKDIR /usr/share
 RUN tar xzvf grafana.tar.gz
 RUN rm -rf grafana.tar.gz
 
+RUN   rm -Rf /usr/share/grafana/conf/provisioning/*
+COPY ./srcs/provisioning  /usr/share/grafana/conf/provisioning/
+RUN  mkdir /usr/share/grafana/conf/dashboards
+COPY ./srcs/dashboards  /usr/share/grafana/conf/dashboards
 COPY ./srcs/grafana.ini /usr/share/grafana/conf/
-COPY ./srcs/datasources.yaml /usr/share/grafana/conf/provisioning/datasources/
-COPY ./srcs/dashboard.yaml /usr/share/grafana/conf/provisioning/dashboards/
-# COPY ./srcs/dashboard.json /usr/share/grafana/conf/provisioning/dashboards/
+
 COPY ./srcs/start.sh .
 RUN  chmod +x start.sh
 EXPOSE 3000

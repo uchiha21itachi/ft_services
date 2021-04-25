@@ -1,6 +1,5 @@
 FROM alpine:latest
 
-# Getting wget
 RUN apk update
 RUN apk add wget curl
 RUN apk add bash openssl
@@ -13,7 +12,6 @@ RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN	mkdir /run/nginx
-# RUN mkdir /www
 
 WORKDIR /var/www
 RUN	wget https://wordpress.org/wordpress-5.6.tar.gz
@@ -43,7 +41,7 @@ WORKDIR /var/www/wordpress/
 RUN ls -la
 
 RUN echo "copying wp-config.php"
-COPY ./wordpress_srcs/default.conf /etc/nginx/http.d/
+# COPY ./wordpress_srcs/default.conf /etc/nginx/http.d/
 COPY ./wordpress_srcs/wp-config.php /var/www/wordpress/
 
 COPY ./wordpress_srcs/setup.sh .
