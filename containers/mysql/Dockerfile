@@ -12,7 +12,6 @@
 
 FROM alpine:latest
 
-# Getting wget
 RUN 	apk update
 RUN 	apk add wget curl
 RUN 	apk add bash

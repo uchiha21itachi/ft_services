@@ -16,7 +16,6 @@ RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 
 RUN	mkdir /run/nginx
-# RUN mkdir /var/www
 
 RUN echo "Installing phpmyadmin"
 RUN	mkdir /var/www/phpMyAdmin

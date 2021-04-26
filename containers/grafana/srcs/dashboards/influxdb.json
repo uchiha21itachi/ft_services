@@ -96,7 +96,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "influxdb0"
+                "value": "influxdb"
               }
             ]
           }
@@ -225,7 +225,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "influxdb0"
+                "value": "influxdb"
               }
             ]
           },
@@ -268,7 +268,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "influxdb0"
+                "value": "influxdb"
               }
             ]
           }
@@ -392,7 +392,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "influxdb0"
+                "value": "influxdb"
               }
             ]
           }
@@ -518,7 +518,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "influxdb0"
+                "value": "influxdb"
               }
             ]
           },
@@ -561,7 +561,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "influxdb0"
+                "value": "influxdb"
               }
             ]
           }

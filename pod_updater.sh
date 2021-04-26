@@ -1,7 +1,7 @@
 eval $(minikube -p minikube docker-env)
 
 echo "Starting to delete the config...."
-kubectl delete -f yaml/telegraf-new.yaml
+kubectl delete -f yaml/telegraf.yaml
 kubectl delete -f yaml/ftps.yaml
 kubectl delete -f yaml/wordpress.yaml
 kubectl delete -f yaml/phpmyadmin.yaml
@@ -75,7 +75,7 @@ kubectl apply -f yaml/nginx.yaml
 kubectl apply -f yaml/phpmyadmin.yaml
 kubectl apply -f yaml/wordpress.yaml
 kubectl apply -f yaml/grafana.yaml
-kubectl apply -f yaml/telegraf-new.yaml
+kubectl apply -f yaml/telegraf.yaml
 echo "------------------------------------------------------------------------------------------"
 echo "------------------------------------------------------------------------------------------"
 echo "------------------------------------------------------------------------------------------"
