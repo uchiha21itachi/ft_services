@@ -41,7 +41,7 @@ WORKDIR /var/www/wordpress/
 RUN ls -la
 
 RUN echo "copying wp-config.php"
-# COPY ./wordpress_srcs/default.conf /etc/nginx/http.d/
+COPY ./wordpress_srcs/default.conf /etc/nginx/http.d/
 COPY ./wordpress_srcs/wp-config.php /var/www/wordpress/
 
 COPY ./wordpress_srcs/setup.sh .

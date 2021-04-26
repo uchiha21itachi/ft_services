@@ -96,7 +96,7 @@
               {
                 "key": "host",
                 "operator": "=",
-                "value": "influxdb"
+                "value": "grafana"
               }
             ]
           }

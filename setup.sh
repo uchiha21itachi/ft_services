@@ -77,37 +77,37 @@ echo "--------------------------------------------------------------------------
 echo "------------------------------------------------------------------------------------------"
 echo "------------------------------------------------------------------------------------------"
 
-docker build -t ft-mysql containers/mysql/. 
+docker build -t ft-mysql srcs/containers/mysql/. 
 echo "------------------------------------------------------------------------------------------"
 echo "-----------------------------Mysql docker image done--------------------------------------"
 echo "------------------------------------------------------------------------------------------"
 sleep 1
-docker build -t ft-nginx containers/nginx/.
+docker build -t ft-nginx srcs/containers/nginx/.
 echo "------------------------------------------------------------------------------------------"
 echo "-----------------------------Nginx docker image done--------------------------------------"
 echo "------------------------------------------------------------------------------------------"
 sleep 1
-docker build -t ft-phpmyadmin containers/phpmyadmin/.
+docker build -t ft-phpmyadmin srcs/containers/phpmyadmin/.
 echo "------------------------------------------------------------------------------------------"
 echo "-----------------------------PhpMyadmin docker image done---------------------------------"
 echo "------------------------------------------------------------------------------------------"
 sleep 1
-docker build -t ft-wordpress containers/wordpress/.
+docker build -t ft-wordpress srcs/containers/wordpress/.
 echo "------------------------------------------------------------------------------------------"
 echo "-----------------------------Wordpress docker image done----------------------------------"
 echo "------------------------------------------------------------------------------------------"
 sleep 1
-docker build -t ft-influxdb containers/influxdb/.
+docker build -t ft-influxdb srcs/containers/influxdb/.
 echo "------------------------------------------------------------------------------------------"
 echo "-----------------------------Influxdb docker image done------------------------------------"
 echo "------------------------------------------------------------------------------------------"
 sleep 1
-docker build -t ft-ftps containers/ftps/.
+docker build -t ft-ftps srcs/containers/ftps/.
 echo "------------------------------------------------------------------------------------------"
 echo "-----------------------------Ftps docker image done---------------------------------------"
 echo "------------------------------------------------------------------------------------------"
 sleep 1
-docker build -t ft-grafana containers/grafana/.
+docker build -t ft-grafana srcs/containers/grafana/.
 echo "------------------------------------------------------------------------------------------"
 echo "-----------------------------grafana docker image done------------------------------------"
 echo "------------------------------------------------------------------------------------------"
@@ -123,19 +123,19 @@ echo "--------------------------------------------------------------------------
 echo "------------------------------------------------------------------------------------------"
 sleep 2
 
-kubectl apply -f yaml/metallb.yaml
+kubectl apply -f srcs/yaml/metallb.yaml
 
-kubectl apply -f yaml/influxdb-volume.yaml
-kubectl apply -f yaml/mysql-volume.yaml
+kubectl apply -f srcs/yaml/influxdb-volume.yaml
+kubectl apply -f srcs/yaml/mysql-volume.yaml
 
-kubectl apply -f yaml/mysql.yaml
-kubectl apply -f yaml/influxdb.yaml
-kubectl apply -f yaml/ftps.yaml
-kubectl apply -f yaml/nginx.yaml
-kubectl apply -f yaml/phpmyadmin.yaml
-kubectl apply -f yaml/wordpress.yaml
-kubectl apply -f yaml/grafana.yaml
-kubectl apply -f yaml/telegraf.yaml
+kubectl apply -f srcs/yaml/mysql.yaml
+kubectl apply -f srcs/yaml/influxdb.yaml
+kubectl apply -f srcs/yaml/ftps.yaml
+kubectl apply -f srcs/yaml/nginx.yaml
+kubectl apply -f srcs/yaml/phpmyadmin.yaml
+kubectl apply -f srcs/yaml/wordpress.yaml
+kubectl apply -f srcs/yaml/grafana.yaml
+kubectl apply -f srcs/yaml/telegraf.yaml
 echo "------------------------------------------------------------------------------------------"
 echo "------------------------------------------------------------------------------------------"
 echo "------------------------------------------------------------------------------------------"
